@@ -13,3 +13,10 @@ export const addTodo = description => {
 		}
 	};
 };
+
+export const markAsCompleted = id => {
+	return {
+		type: MARK_TODO_AS_COMPLETED,
+		payload: id
+	};
+};
