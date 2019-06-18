@@ -5,7 +5,7 @@ export const InputPresentation = ({ type, value, name, inputChange, error }) => 
 	return (
 		<div>
 			<input type={type} value={value} name={name} onChange={evt => inputChange(evt.target.name, evt.target.value)} />
-			<small>{error || ''} </small>
+			<small>{error || ''}</small>
 		</div>
 	);
 };

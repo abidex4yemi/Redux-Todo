@@ -1,9 +1,9 @@
 import uuid from 'uuid';
-import * as actionTypes from './types';
+import { ADD_TODO, TOGGLE_TODO_Completed, DELETE_TODO } from './types';
 
 export const addNewTodo = description => {
 	return {
-		type: actionTypes.ADD_TODO,
+		type: ADD_TODO,
 		payload: {
 			id: uuid(),
 			description,
@@ -14,14 +14,14 @@ export const addNewTodo = description => {
 
 export const toggleTodoCompleted = id => {
 	return {
-		type: actionTypes.TOGGLE_TODO_Completed,
+		type: TOGGLE_TODO_Completed,
 		payload: id
 	};
 };
 
 export const deleteTodo = id => {
 	return {
-		type: actionTypes.DELETE_TODO,
+		type: DELETE_TODO,
 		payload: id
 	};
 };

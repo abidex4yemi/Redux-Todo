@@ -1,16 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { toggleTodoCompleted, deleteTodo } from '../../state/actions/dispatchers';
 import { SingleTodoPresentation } from './SingleTodo/SingleTodo-presentation';
 
 const TodoContainer = props => {
-	const { todos, toggleTodoCompleted } = props;
+	const { todos } = props;
 
-	return (
-		<ul>
-			{todos.map(todo => <SingleTodoPresentation key={todo.id} toggleTodoCompleted={toggleTodoCompleted} {...todo} />)}
-		</ul>
-	);
+	return <ul>{todos.map(todo => <SingleTodoPresentation key={todo.id} {...todo} {...props} />)}</ul>;
 };
 
 const mapStateToProps = state => {
@@ -19,7 +16,7 @@ const mapStateToProps = state => {
 	};
 };
 
-export default connect(mapStateToProps)(TodoContainer);
+export default connect(mapStateToProps, { toggleTodoCompleted, deleteTodo })(TodoContainer);
 
 TodoContainer.propTypes = {
 	todos: PropTypes.arrayOf(

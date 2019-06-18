@@ -6,6 +6,7 @@ import { ButtonPresentation } from './ButtonPresentation';
 
 const Form = props => {
 	const { addNewTodo } = props;
+
 	const [form, setValues] = useState({
 		description: '',
 		errors: {}
