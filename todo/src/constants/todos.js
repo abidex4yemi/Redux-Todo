@@ -1,6 +1,8 @@
+import uuid from 'uuid';
+
 export const todoArray = [
 	{
-		id: 1,
+		id: uuid(),
 		description: 'Learn redux',
 		completed: false
 	}
