@@ -1,7 +1,5 @@
 import React from 'react';
 
-function App() {
+export const App = () => {
 	return <div className="App">Todo app</div>;
-}
-
-export default App;
+};
