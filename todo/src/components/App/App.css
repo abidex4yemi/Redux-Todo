@@ -1,0 +1,48 @@
+body {
+  color: #fff;
+  background: #100e17;
+  line-height: 1.5;
+  font-size: 62.5%;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.todo-list-container .list-item {
+  font-size: 3em;
+  text-transform: capitalize;
+  transition: 0.2s;
+}
+
+.todo-list-container .list-item:hover {
+  cursor: pointer;
+  color: #da1b60;
+}
+
+.todo-list-container .list-item::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  background: #da1b60;
+  display: inline-block;
+  border-radius: 50%;
+  margin: 3px 10px 3px 3px;
+}
+
+.form-container {
+  width: 30%;
+  padding-left: 50px;
+}
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.strike-through {
+  color: #da1b60;
+  text-decoration: line-through red;
+}

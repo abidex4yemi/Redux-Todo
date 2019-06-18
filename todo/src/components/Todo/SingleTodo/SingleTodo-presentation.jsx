@@ -1,6 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import { ButtonPresentation } from '../Form/ButtonPresentation';
+
+const ListItem = styled.li`
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+`;
 
 export const SingleTodoPresentation = props => {
 	const { description, completed, id, toggleTodoCompleted, deleteTodo } = props;
@@ -15,12 +22,12 @@ export const SingleTodoPresentation = props => {
 	};
 
 	return (
-		<div className={`list-item ${addNewClass}`} onClick={handleTodoToggle}>
-			<div>{description}</div>
-			<div>
-				<ButtonPresentation labelText="Delete" type="button" onClick={handleDelete} />
+		<ListItem>
+			<div className={`list-item ${addNewClass}`} onClick={handleTodoToggle}>
+				{description}
 			</div>
-		</div>
+			<ButtonPresentation labelText="Delete" type="button" onClick={handleDelete} />
+		</ListItem>
 	);
 };
 

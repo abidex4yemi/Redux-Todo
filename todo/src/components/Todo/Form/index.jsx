@@ -21,6 +21,10 @@ const Form = props => {
 
 	const handleSubmit = () => {
 		addNewTodo(form.description);
+		setValues({
+			description: '',
+			errors: {}
+		});
 	};
 
 	return (
@@ -31,6 +35,7 @@ const Form = props => {
 				name="description"
 				error={form.errors.description}
 				inputChange={inputChange}
+				placeholder="Enter Description..."
 			/>
 
 			<ButtonPresentation type="button" labelText="Add" onClick={handleSubmit} />
