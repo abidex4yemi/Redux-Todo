@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { SingleTodoPresentation } from './SingleTodo/SingleTodo-presentation';
 
-export const TodoContainer = props => {
+const TodoContainer = props => {
 	const { todos, toggleTodoCompleted } = props;
 
 	return (
@@ -12,10 +13,18 @@ export const TodoContainer = props => {
 	);
 };
 
+const mapStateToProps = state => {
+	return {
+		todos: state.todos
+	};
+};
+
+export default connect(mapStateToProps)(TodoContainer);
+
 TodoContainer.propTypes = {
 	todos: PropTypes.arrayOf(
 		PropTypes.shape({
-			id: PropTypes.number.isRequired,
+			id: PropTypes.string.isRequired,
 			description: PropTypes.string.isRequired,
 			completed: PropTypes.bool.isRequired
 		})

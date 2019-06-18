@@ -1,5 +1,5 @@
 import * as actionTypes from '../actions/types';
-import { todoArray } from '../../constants';
+import { todoArray } from '../../constants/todos';
 
 export const todoReducer = (state = todoArray, action) => {
 	switch (action.type) {
