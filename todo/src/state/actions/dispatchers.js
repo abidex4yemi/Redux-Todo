@@ -12,9 +12,9 @@ export const addNewTodo = description => {
 	};
 };
 
-export const markAsCompleted = id => {
+export const toggleTodoCompleted = id => {
 	return {
-		type: actionTypes.MARK_TODO_AS_COMPLETED,
+		type: actionTypes.TOGGLE_TODO_Completed,
 		payload: id
 	};
 };
