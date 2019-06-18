@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import { addNewTodo } from '../../../state/actions/dispatchers';
 import { InputPresentation } from './InputPresentation';
 import { ButtonPresentation } from './ButtonPresentation';
 
-export const Form = props => {
+const Form = props => {
+	const { addNewTodo } = props;
 	const [form, setValues] = useState({
 		description: '',
 		errors: {}
@@ -15,6 +18,10 @@ export const Form = props => {
 		});
 	};
 
+	const handleSubmit = () => {
+		addNewTodo(form.description);
+	};
+
 	return (
 		<form>
 			<InputPresentation
@@ -25,7 +32,9 @@ export const Form = props => {
 				inputChange={inputChange}
 			/>
 
-			<ButtonPresentation type="button" labelText="Add" onClick={inputChange} />
+			<ButtonPresentation type="button" labelText="Add" onClick={handleSubmit} />
 		</form>
 	);
 };
+
+export default connect(null, { addNewTodo })(Form);

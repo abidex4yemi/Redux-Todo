@@ -1,23 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export const ButtonPresentation = ({ type, value, name, inputChange, error }) => {
+export const InputPresentation = ({ type, value, name, inputChange, error }) => {
 	return (
 		<div>
-			<input type={type} value={value} name={name} onChange={evt => inputChange(evt.target.field, evt.target.value)} />
+			<input type={type} value={value} name={name} onChange={evt => inputChange(evt.target.name, evt.target.value)} />
 			<small>{error || ''} </small>
 		</div>
 	);
 };
 
-ButtonPresentation.propTypes = {
+InputPresentation.propTypes = {
 	type: PropTypes.string,
 	value: PropTypes.string.isRequired,
 	name: PropTypes.string.isRequired,
 	inputChange: PropTypes.func.isRequired,
-	error: PropTypes.string.isRequired
+	error: PropTypes.string
 };
 
-ButtonPresentation.defaultProps = {
+InputPresentation.defaultProps = {
 	type: 'text'
 };

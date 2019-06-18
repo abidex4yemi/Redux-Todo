@@ -1,11 +1,11 @@
-import * as actionTypes from '../actions/types';
+import { ADD_TODO, TOGGLE_TODO_Completed, DELETE_TODO } from '../actions/types';
 import { todoArray } from '../../constants/todos';
 
 export const todoReducer = (state = todoArray, action) => {
 	switch (action.type) {
-		case actionTypes.ADD_TODO:
+		case ADD_TODO:
 			return [...state, action.payload];
-		case actionTypes.TOGGLE_TODO_Completed:
+		case TOGGLE_TODO_Completed:
 			return state.map(todo => {
 				if (todo.id === action.payload.id) {
 					return {
@@ -16,7 +16,7 @@ export const todoReducer = (state = todoArray, action) => {
 
 				return todo;
 			});
-		case actionTypes.DELETE_TODO:
+		case DELETE_TODO:
 			return state.filter(todo => todo.id !== action.payload.id);
 		default:
 			return state;
