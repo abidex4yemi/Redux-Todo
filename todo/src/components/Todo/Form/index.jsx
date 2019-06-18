@@ -28,7 +28,12 @@ const Form = props => {
 	};
 
 	return (
-		<form>
+		<form
+			onSubmit={evt => {
+				evt.preventDefault();
+				handleSubmit();
+			}}
+		>
 			<InputPresentation
 				type="text"
 				value={form.description}
